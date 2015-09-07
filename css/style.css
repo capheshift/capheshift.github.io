@@ -497,3 +497,18 @@ letter-spacing: 0px;
 	background-color: whitesmoke;
 	padding-bottom: 40px;
 }
+
+.user-item {
+	padding: 0 25px;
+	max-width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+.user-item img {
+	width: 100%;
+	border-radius: 100%;
+}
+.user-item .user-title {
+	text-align: center;
+}
