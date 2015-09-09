@@ -38,15 +38,15 @@ $('.owl-carousel').owlCarousel({
 
 $(document).ready(
 
-  function() { 
+  function() {
 
-    $("html").niceScroll({
-    	cursorcolor:"#f74d65",
-    	scrollspeed :"100",
-    	cursorborder:"1px solid #f74d65",
-    	horizrailenabled: "false",
-    	cursorborderradius: "0px"
-    });
+    // $("html").niceScroll({
+    // 	cursorcolor:"#f74d65",
+    // 	scrollspeed :"100",
+    // 	cursorborder:"1px solid #f74d65",
+    // 	horizrailenabled: "false",
+    // 	cursorborderradius: "0px"
+    // });
 
   }
 
@@ -55,7 +55,7 @@ $(document).ready(
 new WOW().init();
 
 
-    
+
 /*Preloader*/
 //<![CDATA[
 $(window).load(function() { // makes sure the whole site is loaded
