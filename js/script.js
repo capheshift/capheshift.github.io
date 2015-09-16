@@ -66,3 +66,41 @@ $(window).load(function() { // makes sure the whole site is loaded
 //]]>
 
 
+/**
+ * get user list
+ */
+$(document).ready(function () {
+  function appendUsers(data) {
+    var i, len, user, userImg, userTitle, listAllUsers;
+
+    listAllUsers = $('.list-all-users');
+
+    for (i = 0, len = data.length; i < len; ++i) {
+      user = $('<div />', {
+        'class': 'col-md-2 user-item wow fadeInRight animated'
+      });
+      userImg = $('<img />', {
+        'src': data[i].avatar_url,
+        'alt': data[i].login
+      });
+      userTitle = $('<h4 />', {
+        'class': 'user-title',
+        'text': data[i].login
+      });
+      user.append(userImg);
+      user.append(userTitle)
+      listAllUsers.append(user);
+    }
+  }
+
+  $.ajax({
+    url: 'https://api.github.com/orgs/capheshift/public_members',
+    method: '',
+    success: function (data) {
+      appendUsers(data);
+    },
+    error: function (xhr, status, error) {
+      console.log(xhr, status, error);
+    }
+  });
+});
