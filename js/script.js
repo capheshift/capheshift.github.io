@@ -34,10 +34,9 @@ $('.owl-carousel').owlCarousel({
             items:1
         }
     }
-})
+});
 
 $(document).ready(
-
   function() {
 
     // $("html").niceScroll({
@@ -47,9 +46,7 @@ $(document).ready(
     // 	horizrailenabled: "false",
     // 	cursorborderradius: "0px"
     // });
-
   }
-
 );
 
 new WOW().init();
@@ -62,17 +59,17 @@ $(window).load(function() { // makes sure the whole site is loaded
   $('#status').fadeOut(); // will first fade out the loading animation
   $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
   $('body').delay(350).css({'overflow':'visible'});
-})
+});
 //]]>
 
 
 /**
- * get user list
+ * get information of ca phe shift team from github
  */
 $(document).ready(function () {
+
   function appendUsers(data) {
     var i, len, user, userImg, userTitle, listAllUsers;
-
     listAllUsers = $('.list-all-users');
 
     for (i = 0, len = data.length; i < len; ++i) {
@@ -88,7 +85,7 @@ $(document).ready(function () {
         'text': data[i].login
       });
       user.append(userImg);
-      user.append(userTitle)
+      user.append(userTitle);
       listAllUsers.append(user);
     }
   }
