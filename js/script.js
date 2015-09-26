@@ -40,11 +40,11 @@ $(document).ready(
   function() {
 
     // $("html").niceScroll({
-    // 	cursorcolor:"#f74d65",
-    // 	scrollspeed :"100",
-    // 	cursorborder:"1px solid #f74d65",
-    // 	horizrailenabled: "false",
-    // 	cursorborderradius: "0px"
+    //  cursorcolor:"#f74d65",
+    //  scrollspeed :"100",
+    //  cursorborder:"1px solid #f74d65",
+    //  horizrailenabled: "false",
+    //  cursorborderradius: "0px"
     // });
   }
 );
@@ -100,4 +100,35 @@ $(document).ready(function () {
       console.log(xhr, status, error);
     }
   });
+});
+////////////
+$(document).ready(function() {
+    var listUser = $('.list-user');
+    var user = '';
+    var avatar = '';
+    var name = '';
+    $.ajax({
+        url: 'https://api.github.com/orgs/capheshift/members',
+        method: 'GET',
+        success: function(data) {
+          console.log(data);
+          for(var i = 0, len =  data.length; i < len; i++) {
+              user = $('<div class="col-md-2 user-item wow fadeInRight animated"></div>');
+              avatar = $('<img />', {
+                  'src': data[i].avatar_url,
+                  'alt': data[i].login
+              });
+              name = $('<h4 />', {
+                'class': 'user-title',
+                'text': data[i].login
+              });
+              user.append(avatar);
+              user.append(name);
+              listUser.append(user);
+          }
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr, status, error);
+      }
+    });
 });
