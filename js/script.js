@@ -105,6 +105,7 @@ $(document).ready(function () {
 $(document).ready(function() {
     var listUser = $('.list-user');
     var user = '';
+    var link = '';
     var avatar = '';
     var name = '';
     $.ajax({
@@ -114,9 +115,13 @@ $(document).ready(function() {
           console.log(data);
           for(var i = 0, len =  data.length; i < len; i++) {
               user = $('<div class="col-md-2 user-item wow fadeInRight animated"></div>');
+              link = $('<a />', {
+                'href': data[i].html_url,
+				        'target': '_blank'
+              });
               avatar = $('<img />', {
-                  'src': data[i].avatar_url,
-                  'alt': data[i].login
+                'src': data[i].avatar_url,
+                'alt': data[i].login
               });
               name = $('<h4 />', {
                 'class': 'user-title',
@@ -124,7 +129,8 @@ $(document).ready(function() {
               });
               user.append(avatar);
               user.append(name);
-              listUser.append(user);
+			  link.append(user);
+              listUser.append(link);
           }
         },
         error: function(xhr, status, error) {
