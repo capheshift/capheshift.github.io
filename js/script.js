@@ -15,7 +15,6 @@ $(function() {
   });
 });
 
-
 //OWL CAROSEL TESTIMONIAL
 $('.owl-carousel').owlCarousel({
     loop:true,
@@ -36,9 +35,9 @@ $('.owl-carousel').owlCarousel({
     }
 });
 
+// add paralax into header
 $(document).ready(
   function() {
-
     // $("html").niceScroll({
     //  cursorcolor:"#f74d65",
     //  scrollspeed :"100",
@@ -46,12 +45,23 @@ $(document).ready(
     //  horizrailenabled: "false",
     //  cursorborderradius: "0px"
     // });
+    
+    var $header = $('header');
+    var oldTop = $(document).scrollTop();
+    $(window).scroll(function(e) {
+      var newTop = $(document).scrollTop();
+      var delta = newTop - oldTop;
+
+      if (newTop > 614) {
+        return;
+      }
+      
+      $header.css('transform', 'translate3d(0,' + (-delta*0.5) + 'px,0)');
+    })
   }
 );
 
 new WOW().init();
-
-
 
 /*Preloader*/
 //<![CDATA[
@@ -101,7 +111,8 @@ $(document).ready(function () {
     }
   });
 });
-////////////
+
+// get list user from github
 $(document).ready(function() {
     var listUser = $('.list-user');
     var user = '';
