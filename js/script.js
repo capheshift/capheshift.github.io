@@ -47,13 +47,25 @@ $(document).ready(
     // });
     
     var $header = $('header');
+    // most of time, its equal to 0
     var oldTop = $(document).scrollTop();
+    // set position for header at the first time
+    setTimeout(function() {
+      $header.css('transform', 'translate3d(0,' + (-oldTop*0.5) + 'px,0)');
+    }, 0);
+
     $(window).scroll(function(e) {
       var newTop = $(document).scrollTop();
       var delta = newTop - oldTop;
 
+      // 614 is heigh of header
       if (newTop > 614) {
         return;
+      }
+
+      if (newTop < oldTop) {
+        oldTop = newTop;
+        delta = oldTop;
       }
       
       $header.css('transform', 'translate3d(0,' + (-delta*0.5) + 'px,0)');
