@@ -45,7 +45,7 @@ $(document).ready(
     //  horizrailenabled: "false",
     //  cursorborderradius: "0px"
     // });
-    
+
     var $header = $('header');
     // most of time, its equal to 0
     var oldTop = $(document).scrollTop();
@@ -67,7 +67,7 @@ $(document).ready(
         oldTop = newTop;
         delta = oldTop;
       }
-      
+
       $header.css('transform', 'translate3d(0,' + (-delta*0.5) + 'px,0)');
     })
   }
@@ -160,4 +160,15 @@ $(document).ready(function() {
           console.log(xhr, status, error);
       }
     });
+});
+
+// Function handle event of slideshow .
+$(document).ready(function() {
+  $('.bxslider').bxSlider({
+    auto : true,
+    minSlides: 3,
+    maxSlides: 3,
+    slideWidth: 400,
+    slideMargin:5
+  });
 });
