@@ -163,12 +163,12 @@ $(document).ready(function() {
 });
 
 // Function handle event of slideshow .
-$(document).ready(function() {
-  $('.bxslider').bxSlider({
-    auto : true,
-    minSlides: 3,
-    maxSlides: 3,
-    slideWidth: 400,
-    slideMargin:5
-  });
-});
+// $(document).ready(function() {
+//   $('.bxslider').bxSlider({
+//     auto : true,
+//     minSlides: 3,
+//     maxSlides: 3,
+//     slideWidth: 400,
+//     slideMargin:5
+//   });
+// });
